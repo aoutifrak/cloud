@@ -1,0 +1,75 @@
+# www.robotstxt.org
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Allow: /movies/
+Allow: /tv-shows/
+Allow: /trending/
+Allow: /popular/
+Allow: /top-rated/
+Allow: /genre/
+Allow: /search/
+Allow: /watch/
+Allow: /api/
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /api/auth/
+Disallow: /api/admin/
+Disallow: /api/private/
+
+# Disallow query parameters that don't affect content
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Disallow: /*?*source=
+
+# Allow specific query parameters
+Allow: /*?*q=
+Allow: /*?*id=
+Allow: /*?*type=
+
+# Crawl-delay for all bots
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://bflixto.org/sitemap.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 5
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 5
+
+# Block bad bots
+User-agent: BadBot
+Disallow: /
+
+User-agent: ScraperBot
+Disallow: /
+
+User-agent: DownloaderBot
+Disallow: /
+
+# Block archive.org
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: / 
