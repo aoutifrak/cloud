@@ -2,8 +2,9 @@
 FROM node:20 AS builder
 WORKDIR /app
 
+# Use smaller install step to reduce memory usage
 COPY package.json package-lock.json ./
-RUN npm ci  # do NOT use --omit=dev
+RUN npm ci --prefer-offline --no-audit --progress=false
 
 COPY . .
 RUN npm run build
